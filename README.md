@@ -83,8 +83,10 @@ class ReallySecureDialer
   end
 end
 ```
+### Interstitial content:
+<a href="http://www.flickr.com/photos/alancleaver/4446487402/" title="waiting by Alan Cleaver, on Flickr"><img src="http://farm5.staticflickr.com/4061/4446487402_bb1fb5ec19.jpg" width="335" height="500" alt="waiting"></a>
 
-Now enhance it!
+### Let's enhance it!
 ```ruby
 require 'prism'
 
@@ -101,7 +103,7 @@ ReallySecureDialer.class_eval do
 end
 ```
 
-With this in place, every invocation of `.place_call` is automatically :notebook: logged.
+With this in place, every invocation of `.place_call` is automatically logged.  There will also be a `:place_call_without_log` method available to sidestep the enhancements.
 
 ## Ok, so how does xray's server-side code injection shake out in the browser?
 
