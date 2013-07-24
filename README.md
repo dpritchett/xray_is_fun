@@ -78,10 +78,8 @@ xray/engine.rb
 Check out this sweet phone dialer utility:
 ```ruby
 class ReallySecureDialer
-  attr_accessor :call
-
   def place_call(to_number)
-    # ... do stuff involving @call
+    # ... do stuff
   end
 end
 ```
@@ -92,6 +90,10 @@ require 'prism'
 
 ReallySecureDialer.class_eval do
   def place_call_with_log
+    # capture results of the original place_call method
+    call = self.place_call_without_log
+    
+    # store metadata in secure location
     Prism.phone_home call.metadata
   end
 
