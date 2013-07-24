@@ -86,7 +86,7 @@ With this in place, every invocation of `.place_call` is automatically :notebook
 
 ## Ok, so how does xray's server-side code injection shake out in the browser?
 
-Javascript listener standing by to show the xray overlay:
+<del>Java</del>CoffeeScript listener standing by to show the xray overlay:
 ```coffee
 Xray.init = do ->
 # ...
