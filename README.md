@@ -1,6 +1,6 @@
 # Crack open a nested template with xray-rails
 
-Hi, I'm [Daniel Pritchett](http://dpritchett.net).  I work here at [Coroutine](http://coroutine.com).  We help our clients grow their businesses by delivering :satellite: mission-critical software.
+Hi, I'm [Daniel Pritchett](http://dpritchett.net).  I work here at [Coroutine](http://coroutine.com).  We help our clients grow their businesses by delivering :satellite: mission-critical software that works.
 
 This presentation is written up for the[@MemphisRuby](http://twitter.com/memphisruby) Users Group meeting in July 2013.
 
