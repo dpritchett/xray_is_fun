@@ -136,6 +136,10 @@ Where'd `<!-- XRAY START -->` come from?  Our `template.render` alias chain!
 ```
 
 ## Ok, we know how xray works.  Now what can we do with it again?
-Play!
+Play! :thumbsup:
 
-Demo code is published: https://github.com/dpritchett/xray_is_fun
+```sh
+git clone git@github.com:dpritchett/xray_is_fun.git; cd xray_is_fun
+bundle install
+bundle exec rails server
+open http://localhost:3000/demo/haml
