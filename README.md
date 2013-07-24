@@ -83,7 +83,7 @@ class ReallySecureDialer
   end
 end
 ```
-### Interstitial content:
+### `INTERSTITIAL CONTENT`
 <a href="http://www.flickr.com/photos/alancleaver/4446487402/" title="waiting by Alan Cleaver, on Flickr"><img src="http://farm5.staticflickr.com/4061/4446487402_bb1fb5ec19.jpg" width="335" height="500" alt="waiting"></a>
 
 ### Let's enhance it!
