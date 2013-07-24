@@ -89,9 +89,9 @@ Now enhance it!
 require 'prism'
 
 ReallySecureDialer.class_eval do
-  def place_call_with_log
+  def place_call_with_log(to_number)
     # capture results of the original :place_call method
-    call = self.place_call_without_log
+    call = self.place_call_without_log(to_number)
     
     # store metadata in secure location
     Prism.phone_home call.metadata
