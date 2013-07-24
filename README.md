@@ -1,7 +1,6 @@
 # Crack open a nested template with xray-rails
 
-[Daniel Pritchett](http://dpritchett.net)
-[Coroutine](http://coroutine.com)
+[Daniel Pritchett](http://dpritchett.net) - [Coroutine](http://coroutine.com)
 
 [@MemphisRuby](http://twitter.com/memphisruby), July 2013
 
