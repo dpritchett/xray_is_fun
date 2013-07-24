@@ -90,7 +90,7 @@ require 'prism'
 
 ReallySecureDialer.class_eval do
   def place_call_with_log
-    # capture results of the original place_call method
+    # capture results of the original :place_call method
     call = self.place_call_without_log
     
     # store metadata in secure location
