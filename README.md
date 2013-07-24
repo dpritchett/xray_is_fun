@@ -1,10 +1,10 @@
 # Crack open a nested template with xray-rails
 
-Hi, I'm [Daniel Pritchett](http://dpritchett.net).  I work here at [Coroutine](http://coroutine.com).  We help our clients grow their businesses by delivering mission-critical software.
+Hi, I'm [Daniel Pritchett](http://dpritchett.net).  I work here at [Coroutine](http://coroutine.com).  We help our clients grow their businesses by delivering :satellite: mission-critical software.
 
-[@MemphisRuby](http://twitter.com/memphisruby), July 2013
+This presentation is written up for the[@MemphisRuby](http://twitter.com/memphisruby) Users Group meeting in July 2013.
 
-Follow along online:
+#### Follow along online
 
 ![QR link to this repo](http://bitly.com/13bjKyP.qrcode)
 
@@ -82,7 +82,7 @@ ReallySecureDialer.class_eval do
 end
 ```
 
-With this in place, every invocation of `.place_call` is automatically logged.
+With this in place, every invocation of `.place_call` is automatically :notebook: logged.
 
 ## Ok, so how does xray's server-side code injection shake out in the browser?
 
