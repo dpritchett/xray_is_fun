@@ -25,6 +25,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'pry',        '~> 0.9.12.2'
   gem 'unicorn',    '~> 4.6.3'
   gem 'xray-rails', '~> 0.1.6'
 end
