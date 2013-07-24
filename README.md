@@ -5,6 +5,7 @@ Daniel Pritchett
 [@MemphisRuby](http://twitter.com/memphisruby), July 2013
 
 Follow along online:
+
 ![QR link to this repo](http://bitly.com/13bjKyP.qrcode)
 
 ### What's all this?
