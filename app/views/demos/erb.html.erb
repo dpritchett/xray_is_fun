@@ -1,0 +1,23 @@
+<!--  Whee! -->
+<% random_partial_name = "shared/#{ %w[alpha beta].sample }" %>
+<% consistent_partial_name = "shared/gamma" %>
+
+<div class="content">
+  <div class="row span12">
+    <div class="row offset4">
+      <%= render partial: 'shared/header' %>
+    </div>
+
+    <div class="row offset4">
+      Here is some content!
+    </div>
+
+    <div class="row offset4">
+      <%= render partial: 'shared/gamma' %>
+    </div>
+
+    <div class="row offset4">
+      <%= render partial: 'shared/footer' %>
+    </div>
+  </div>
+</div>

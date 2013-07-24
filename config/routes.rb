@@ -13,6 +13,13 @@ XrayIsFun::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+  resource :demo do
+    member do
+      get 'haml'
+      get 'erb'
+    end
+  end
+
   # Sample resource route with options:
   #   resources :products do
   #     member do
@@ -48,7 +55,7 @@ XrayIsFun::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'demo#haml_demo'
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,0 +1,17 @@
+// Whee!
+- random_partial_name = "shared/#{ %w[alpha beta].sample }"
+- consistent_partial_name = "shared/gamma"
+
+.content
+  .row.span12
+    .row.offset4
+      = render partial: 'shared/header'
+
+    .row.offset4
+      Here is some content!
+
+    .row.offset4
+      = render partial: 'shared/gamma'
+
+    .row.offset4
+      = render partial: 'shared/footer'

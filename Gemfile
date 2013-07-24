@@ -7,6 +7,9 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 
 # views
+gem 'bootstrap-sass-rails',     '~> 2.3.2.1'
+gem 'font-awesome-sass-rails',  '~> 3.0.2.2'
+gem 'haml-rails',               '~> 0.4'
 gem 'jquery-rails'
 
 # Gems used only for assets and not required
@@ -22,5 +25,6 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'unicorn',    '~> 4.6.3'
   gem 'xray-rails', '~> 0.1.6'
 end
