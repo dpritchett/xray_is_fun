@@ -52,6 +52,11 @@ Copyright 2013 Memphis Ruby Users Group
 ### Okay, but why do I need xray?
 Larger web applications can have tens, hundreds, maybe even thousands of template files.  When you're looking to update a screen in an old app that someone else put together it really helps to have tools that help you home in on the code responsible for the on-page DOM elements that need changing.  'Myself eighteen months ago' _totally_ counts as someone else!
 
+```
+> find app/views | wc -l
+     115
+```
+
 ### Fine.  How do I add it to my Rails app?
 ```ruby
 # From your app's Gemfile:
@@ -60,12 +65,6 @@ group :development, :test do
   gem 'xray-rails', '~> 0.1.6'
 end
 ```
-
-```
-> find app/views | wc -l
-     115
-```
-
 
 ### How does it work?
 ```
