@@ -9,7 +9,7 @@ Follow along online:
 ![QR link to this repo](http://bitly.com/13bjKyP.qrcode)
 
 ### What's all this?
-Xray provides an in-browser overlay to allow developers to identify which template generated each section of the rendered page. ([Animation](http://f.cl.ly/items/1A0o3y1y3Q13103V3F1l/xray-rails-large.gif))
+[Xray-rails](https://github.com/brentd/xray-rails) provides an in-browser overlay to allow developers to identify which template generated each section of the rendered page. ([Animation](http://f.cl.ly/items/1A0o3y1y3Q13103V3F1l/xray-rails-large.gif))
 
 ### What's that mean?
 Rails templates allow the mixing of dynamic content with static content.
