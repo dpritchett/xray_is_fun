@@ -1,0 +1,118 @@
+# Crack open a nested template with xray-rails
+
+Daniel Pritchett
+
+[@MemphisRuby](http://twitter.com/memphisruby), July 2013
+
+### What's all this?
+Xray provides an in-browser overlay to allow developers to identify which template generated each section of the rendered page. ([Animation](http://f.cl.ly/items/1A0o3y1y3Q13103V3F1l/xray-rails-large.gif))
+
+### What's that mean?
+Rails templates allow the mixing of dynamic content with static content.
+
+```erb
+Hello, my name is <%= user.name.upcase %>.
+```
+
+Becomes:
+```
+Hello, my name is DANIEL PRITCHETT.
+```
+
+
+Repeated template elements can be broken out into partial templates.  Define a footer partial template:
+
+```erb
+# app/views/shared/_footer.html.erb
+<div id="footer>
+  Copyright <%= DateTime.now.year %> Memphis Ruby Users Group
+</div>
+```
+
+Include it in a top-level template:
+
+```erb
+# app/views/demo/some_random_page.html.erb
+This is an example page!
+<%= render partial: 'shared/footer' %>
+```
+
+Combined output:
+
+```
+This is an example page!
+
+Copyright 2013 Memphis Ruby Users Group
+```
+
+### How does it work?
+```
+~/.rvm/gems/ruby-2.0.0-p195/gems/xray-rails-0.1.6/lib $ ack chain
+xray/engine.rb
+37:        alias_method_chain :render, :xray
+```
+
+#### What's alias_method_chain again?
+
+Check out this sweet phone dialer utility:
+```ruby
+class ReallySecureDialer
+  attr_accessor :call
+
+  def place_call(to_number)
+    # ... do stuff involving @call
+  end
+end
+```
+
+Now enhance it!
+```ruby
+require 'prism'
+
+ReallySecureDialer.class_eval do
+  def place_call_with_log
+    Prism.phone_home call.metadata
+  end
+
+  alias_method_chain :place_call, :log
+end
+```
+
+With this in place, every invocation of `.place_call` is automatically logged.
+
+## Ok, so how does xray's server-side code injection shake out in the browser?
+
+Javascript listener standing by to show the xray overlay:
+```coffee
+Xray.init = do ->
+# ...
+  # Register keyboard shortcuts
+  $(document).keydown (e) ->
+    # cmd+shift+x on Mac, ctrl+shift+x on other platforms
+    if (is_mac and e.metaKey or !is_mac and e.ctrlKey) and e.shiftKey and e.keyCode is 88
+      if Xray.isShowing then Xray.hide() else Xray.show()
+    if Xray.isShowing and e.keyCode is 27 # esc
+      Xray.hide()
+
+# ...
+
+# Scans the document for templates, creating Xray.TemplateSpecimens for them.
+Xray.findTemplates = -> util.bm 'findTemplates', ->
+  # Find all <!-- XRAY START ... --> comments
+  comments = $('*:not(iframe,script)').contents().filter ->
+    this.nodeType == 8 and this.data[0..9] == "XRAY START"
+```
+
+Where'd `<!-- XRAY START -->` come from?  Our `template.render` alias chain!
+```ruby
+  def self.augment_template(source, path)
+    id = next_id
+    augmented = "<!--XRAY START #{id} #{path}-->\n#{source}\n<!--XRAY END #{id}-->"
+    ActiveSupport::SafeBuffer === source ? ActiveSupport::SafeBuffer.new(augmented) : augmented
+  end
+```
+
+## Ok, we know how xray works.  Now what can we do with it again?
+Play!
+
+Demo code is published: https://github.com/dpritchett/xray_is_fun
