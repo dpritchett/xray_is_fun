@@ -4,7 +4,7 @@ Hi, I'm [Daniel Pritchett](http://dpritchett.net).  I work here at [Coroutine](h
 
 This presentation is written up for the[@MemphisRuby](http://twitter.com/memphisruby) Users Group meeting in July 2013.
 
-#### Follow along online
+#### Want to follow along online? Point your tricorder below:
 
 ![QR link to this repo](http://bitly.com/13bjKyP.qrcode)
 
